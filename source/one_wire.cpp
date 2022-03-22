@@ -25,9 +25,9 @@ One_wire::One_wire(uint data_pin, uint power_pin, bool power_polarity)
 }
 
 void One_wire::init() {
-	gpio_init(_data_pin);
+	_gpio_init(_data_pin);
 	if (_parasite_pin != not_controllable) {
-		gpio_init(_parasite_pin);
+		_gpio_init(_parasite_pin);
 	}
 	for (uint8_t &byte_counter : ram) {
 		byte_counter = 0x00;
